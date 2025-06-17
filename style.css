@@ -1,0 +1,158 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default dark theme body styles (replaces Tailwind classes on body tag) */
+body {
+    background-color: #111827; /* bg-gray-900 */
+    color: #f9fafb; /* gray-50 */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.typing::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.floating-logo {
+  position: absolute;
+  width: 50px;
+  opacity: 0.08;
+  z-index: 0;
+  animation: float 20s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0) translateX(0); }
+  25%  { transform: translateY(-40px) translateX(30px); }
+  50%  { transform: translateY(0) translateX(60px); }
+  75%  { transform: translateY(40px) translateX(30px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.invert-color {
+  filter: invert(1);
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; z-index: 1;
+}
+
+.carousel-item.active {
+  opacity: 1; z-index: 2;
+}
+
+.nav-link {
+    position: relative; padding-bottom: 8px; transition: color 0.3s ease-in-out;
+}
+
+.nav-link::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background-color: #60A5FA; /* blue-400 */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #60A5FA; /* blue-400 */
+}
+
+#mobile-menu {
+  max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out;
+}
+
+#mobile-menu.open {
+  max-height: 500px;
+}
+
+#contact-modal {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#contact-modal .modal-content {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-border-wrapper {
+    background: transparent;
+    transition: background 0.4s ease-in-out;
+    padding: 2px;
+}
+
+.card-border-wrapper:hover {
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+}
+
+/* --- NEW: Light Mode Styles --- */
+html.light body {
+    background-color: #f9fafb; /* gray-50 */
+    color: #111827; /* gray-900 */
+}
+
+html.light nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-color: #e5e7eb; /* gray-200 */
+}
+
+html.light .text-white,
+html.light .text-gray-300 {
+    color: #374151; /* gray-700 */
+}
+
+html.light #mobile-menu-button { color: #374151; }
+html.light #mobile-menu-button:hover { color: #111827; }
+html.light .nav-link:hover { color: #3B82F6; }
+html.light .nav-link.active { color: #3B82F6; }
+html.light .nav-link::after { background-color: #3B82F6; }
+html.light .floating-logo { filter: invert(1) opacity(0.08); }
+
+html.light .bg-gray-700,
+html.light .bg-gray-800,
+html.light .bg-gray-900 {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+html.light footer,
+html.light #mobile-menu {
+    background-color: #ffffff;
+    border-top-color: #e5e7eb;
+}
+
+html.light .text-gray-500 { color: #6b7280; }
+html.light .text-blue-400 { color: #3B82F6; }
+html.light #mobile-menu a.text-gray-300 { color: #374151; }
+html.light #mobile-menu a:hover { background-color: #f3f4f6; }
+html.light #contact-modal .modal-content { background-color: #ffffff; }
+
+html.light #contact-modal input,
+html.light #contact-modal textarea {
+    background-color: #f3f4f6;
+    color: #111827;
+    border-color: #d1d5db;
+}
+
+html.light #contact-modal input:focus,
+html.light #contact-modal textarea:focus {
+    border-color: #3B82F6;
+    --tw-ring-color: #3B82F6;
+}
+
+html.light #close-modal-button { color: #9ca3af; }
+html.light #close-modal-button:hover { color: #111827; }
+html.light #theme-toggle { color: #4b5563; }
+html.light #theme-toggle:hover { background-color: #f3f4f6; }
+
+html.light .card-border-wrapper:hover {
+    background: linear-gradient(135deg, #60A5FA, #A78BFA);
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- The 'light' class will be added here by JS -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romer Casper Demeterio | Portfolio</title>
+  <link rel="icon" type="image/png" href="logo1.png">
+  
+  <!-- External CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Background and text color classes are removed and handled by style.css for theme switching -->
+<body class="overflow-y-auto relative">
+
+  <!-- Floating Programming Logos -->
+  <div class="pointer-events-none fixed w-full h-full top-0 left-0 z-0">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="floating-logo top-10 left-10">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="floating-logo top-40 right-10">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="floating-logo top-96 left-1/2">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="floating-logo top-60 left-1/4">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="floating-logo top-20 right-1/3">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="floating-logo top-3/4 left-16">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="floating-logo top-1/3 right-1/5">
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/VB.NET_Logo.svg" class="floating-logo top-1/2 left-1/6">
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-900/80 backdrop-blur-sm shadow-md sticky top-0 z-50 border-b border-gray-700/50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <a href="#home">
+                <img src="logo1.png" alt="Romer.dev Logo" class="h-14" style="filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.7));">
+            </a>
+            <ul class="hidden md:flex items-center space-x-8 text-base">
+                <li><a href="#home" class="nav-link text-gray-300">Home</a></li>
+                <li><a href="#about" class="nav-link text-gray-300">About</a></li>
+                <li><a href="#services" class="nav-link text-gray-300">Services</a></li>
+                <li><a href="#skills" class="nav-link text-gray-300">Skills</a></li>
+                <li><a href="#projects" class="nav-link text-gray-300">Projects</a></li>
+                <li><a href="#contact" class="nav-link text-gray-300">Contact</a></li>
+            </ul>
+            <!-- Wrapper for right-side icons -->
+            <div class="flex items-center space-x-2">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" type="button" class="text-gray-400 hover:text-white focus:outline-none rounded-lg p-2.5 transition-colors">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100 2h1a1 1 0 100-2H3zm3.146 6.464l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM1.5 10.5a1 1 0 011-1h1.5v-2H2a1 1 0 01-1-1V6a1 1 0 011-1h1.5V3.5a1 1 0 011-1h2a1 1 0 011 1V2h2v1.5a1 1 0 011 1V6h1.5a1 1 0 011 1v1.5h-1.5v2H18a1 1 0 011 1v2a1 1 0 01-1 1h-1.5v2.5a1 1 0 01-1 1h-2a1 1 0 01-1-1V18h-2v-1.5a1 1 0 01-1-1V14h-1.5a1 1 0 01-1-1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="bg-gray-900/80">
+        <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+             <li><a href="#home" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-base font-medium">Home</a></li>
+            <li><a href="#about" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-base font-medium">About</a></li>
+            <li><a href="#services" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-base font-medium">Services</a></li>
+            <li><a href="#skills" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-base font-medium">Skills</a></li>
+            <li><a href="#projects" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-base font-medium">Projects</a></li>
+            <li><a href="#contact" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-base font-medium">Contact</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
+        <h1 id="typed-text" class="text-5xl font-bold mb-4 typing"></h1>
+        <p class="text-xl text-gray-300 max-w-lg">Passionate Full Stack Developer | UI/UX Designer | Backend Engineer</p>
+    </section>
+
+    <section id="about" class="py-20 px-6 max-w-5xl mx-auto relative z-10">
+        <h2 class="text-4xl font-bold text-center mb-12">About <span class="text-blue-400">Me</span></h2>
+        <div class="grid md:grid-cols-5 gap-10 items-center">
+            <div class="md:col-span-2"><div id="image-carousel" class="relative w-full h-80 md:h-96 bg-gray-700 rounded-lg shadow-lg overflow-hidden"><img src="image1.jpeg" alt="A photo of me" class="carousel-item active"><img src="image2.jpeg" alt="Another photo of me" class="carousel-item"><img src="image3.jpeg" alt="A third photo of me" class="carousel-item"></div></div>
+            <div class="md:col-span-3"><p class="text-lg text-gray-300 mb-4">I am Romer Casper Demeterio, a full stack developer with a strong foundation in both front-end and back-end development. I build interactive websites, responsive web apps, and intuitive interfaces using technologies like HTML, CSS, JavaScript, PHP, MySQL, React, and Tailwind CSS.</p><p class="text-lg text-gray-300 mb-4">I also develop Windows desktop applications using Visual Studio with VB.NET and Windows Forms. I enjoy creating management systems, automation tools, and practical software that improve productivity and solve real-world problems.</p><p class="text-lg text-gray-300">Beyond development, I gained valuable hands-on experience as a Technical Support representative during my on-the-job training. This role enhanced my problem-solving abilities and taught me to provide effective user assistance and troubleshoot technical issues efficiently.</p></div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-6 bg-gray-800 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Services <span class="text-blue-400">I Offer</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-8 shadow-lg text-center flex flex-col items-center h-full"><svg class="w-12 h-12 mb-4 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><h3 class="text-2xl font-semibold mb-2">Web Development</h3><p class="text-gray-300 flex-grow">I create modern, responsive websites from the ground up. Whether you need a personal portfolio, a business landing page, or a full-featured web application, I can build a solution tailored to your needs.</p><button data-service="Web Development" class="inquire-button mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Inquire Now</button></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-8 shadow-lg text-center flex flex-col items-center h-full"><svg class="w-12 h-12 mb-4 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg><h3 class="text-2xl font-semibold mb-2">Desktop Applications</h3><p class="text-gray-300 flex-grow">I develop custom desktop applications for Windows to streamline business operations. This includes Point of Sale (POS) systems, inventory management tools, and other practical software solutions.</p><button data-service="Desktop Applications" class="inquire-button mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Inquire Now</button></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-8 shadow-lg text-center flex flex-col items-center h-full"><svg class="w-12 h-12 mb-4 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-5.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20M1 M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg><h3 class="text-2xl font-semibold mb-2">Student Project Assistance</h3><p class="text-gray-300 flex-grow">Struggling with a coding assignment? I offer tutoring and guidance to help you understand core concepts, debug your code, and successfully complete your academic projects and activities.</p><button data-service="Student Project Assistance" class="inquire-button mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Inquire Now</button></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">My <span class="text-blue-400">Skills</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">TypeScript</h3><p class="text-gray-300 text-sm">This website is built using TypeScript. I utilize static types and mock data to enhance dynamic features and maintain code reliability.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">Javascript</h3><p class="text-gray-300 text-sm">I am proficient in vanilla JavaScript. I can manipulate the DOM, create functional logic, and apply object-oriented programming principles effectively.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React JS logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">React JS</h3><p class="text-gray-300 text-sm">This website is developed using React JS. I use TanStack Router for navigation and have a solid understanding of React's core concepts to build dynamic, interactive interfaces.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">Tailwind CSS</h3><p class="text-gray-300 text-sm">I used Tailwind CSS for styling this website. I am comfortable with utility-first styling and can manage responsive design effectively using Tailwind's built-in features.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://avatars.githubusercontent.com/u/139895814?s=200&v=4" alt="Shadcn UI logo" class="h-20 w-20 mb-4 rounded-full"><h3 class="text-xl font-semibold mb-2">Shadcn UI</h3><p class="text-gray-300 text-sm">I am knowledgeable in creating reusable component with shadcn UI and make reusable forms and fields with it.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">PHP</h3><p class="text-gray-300 text-sm">I have basic knowledge of PHP and can perform standard CRUD operations. While I'm still learning best practices for security, I understand the core functionality of backend development with PHP.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">HTML</h3><p class="text-gray-300 text-sm">I am proficient in HTML and understand semantic tag structure, ensuring well-organized and accessible web pages.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">CSS</h3><p class="text-gray-300 text-sm">I am skilled in CSS, including layout systems like Flexbox and Grid. I can create fully responsive designs using media queries and other modern CSS techniques.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">MySQL</h3><p class="text-gray-300 text-sm">I am knowledgeable in relational databases using MySQL. I understand how to implement primary and foreign keys, and I can define constraints for better data integrity.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">C++</h3><p class="text-gray-300 text-sm">I have a foundational understanding of C++ and its object-oriented principles, primarily used for academic projects and problem-solving.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/VB.NET_Logo.svg" alt="VB.NET logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">VB.NET</h3><p class="text-gray-300 text-sm">I develop Windows desktop applications using VB.NET and Windows Forms to create management systems and practical utility tools.</p></div></div>
+                <div class="card-border-wrapper rounded-lg"><div class="bg-gray-700 rounded-lg p-6 shadow-lg text-center flex flex-col items-center h-full"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRRdU9q3LfQVdSrsCh3Ah0eaPLMY3K0Rne9g&s" alt="XAMPP logo" class="h-20 w-20 mb-4"><h3 class="text-xl font-semibold mb-2">XAMPP</h3><p class="text-gray-300 text-sm">I use XAMPP for local web development, managing Apache, MySQL, and PHP environments to build and test backend functionalities.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 bg-gray-800 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10">My Ready <span class="text-blue-400">Projects</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects remain here -->
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg flex flex-col h-full">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2">Movie Web Application</h3>
+                        <p class="text-gray-300 mb-4">A movie web application that allows users to search and view details of movies.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded text-sm">React</span>
+                            <span class="bg-pink-500 text-white px-2 py-1 rounded text-sm">Appwrite</span>
+                            <span class="bg-green-500 text-white px-2 py-1 rounded text-sm">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <button data-service="Movie Web Application" class="inquire-button mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Inquire Now</button>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg flex flex-col h-full">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2">Japanese Restaurant Website</h3>
+                        <p class="text-gray-300 mb-4">A modern website to showcase a Japanese food brand with an elegant UI.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-yellow-500 text-white px-2 py-1 rounded text-sm">HTML</span>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-sm">CSS</span>
+                            <span class="bg-blue-800 text-white px-2 py-1 rounded text-sm">JavaScript</span>
+                        </div>
+                    </div>
+                    <button data-service="Japanese Restaurant Website" class="inquire-button mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Inquire Now</button>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg flex flex-col h-full">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2">Inventory Management System</h3>
+                        <p class="text-gray-300 mb-4">A desktop-based inventory tracking system built using Visual Studio and VB.NET, capable of managing stock levels, suppliers, and product data.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">VB.NET</span>
+                            <span class="bg-blue-700 text-white px-2 py-1 rounded text-sm">Windows Forms</span>
+                            <span class="bg-gray-500 text-white px-2 py-1 rounded text-sm">SQLite</span>
+                        </div>
+                    </div>
+                    <button data-service="Inventory Management System" class="inquire-button mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Inquire Now</button>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg flex flex-col h-full">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2">E-bike Inventory & POS System</h3>
+                        <p class="text-gray-300 mb-4">A desktop application for E-bike shops, featuring inventory management, a Point of Sale (POS) system, and printing for receipts and certification papers.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-purple-600 text-white px-2 py-1 rounded text-sm">VB.NET</span>
+                            <span class="bg-blue-700 text-white px-2 py-1 rounded text-sm">Windows Forms</span>
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">MySQL</span>
+                        </div>
+                    </div>
+                    <button data-service="E-bike Inventory & POS System" class="inquire-button mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Inquire Now</button>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg flex flex-col h-full">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2">Hotel Management & Booking System</h3>
+                        <p class="text-gray-300 mb-4">A comprehensive web-based system for managing hotel rooms, guest bookings, and reservations. Built with a local XAMPP environment.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm">PHP</span>
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">MySQL</span>
+                            <span class="bg-blue-800 text-white px-2 py-1 rounded text-sm">JavaScript</span>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-sm">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <button data-service="Hotel Management & Booking System" class="inquire-button mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Inquire Now</button>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6 shadow-lg flex flex-col h-full">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-semibold mb-2">Email Consent Manager</h3>
+                        <p class="text-gray-300 mb-4">A lightweight tool to manage email consent by sending request emails and tracking user responses.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-indigo-500 text-white px-2 py-1 rounded text-sm">PHP</span>
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">MySQL</span>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded text-sm">HTML/CSS</span>
+                        </div>
+                    </div>
+                    <button data-service="Email Consent Manager" class="inquire-button mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Inquire Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+  
+  <footer id="contact" class="bg-gray-900 py-10 border-t border-gray-700 relative z-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold text-blue-400 mb-2">Get in Touch</h3>
+      <p class="text-gray-300 mb-4">Email: <a href="mailto:romercasper63@gmail.com" class="text-blue-400 hover:underline">romercasper63@gmail.com</a></p>
+      <p class="text-sm text-gray-500">© 2025 Romer Casper Demeterio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 opacity-0">
+    <div class="modal-content bg-gray-800 rounded-lg shadow-2xl p-8 w-full max-w-lg relative transform scale-95">
+        <button id="close-modal-button" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">×</button>
+        <h3 id="modal-title" class="text-2xl font-bold text-blue-400 mb-6">Service Inquiry</h3>
+        <div class="space-y-4">
+            <div><label for="modal-name" class="block text-sm font-medium text-gray-300">Your Name</label><input type="text" id="modal-name" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div>
+            <div><label for="modal-email" class="block text-sm font-medium text-gray-300">Your Email (Optional)</label><input type="email" id="modal-email" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div>
+            <div><label for="modal-message" class="block text-sm font-medium text-gray-300">Message</label><textarea id="modal-message" rows="4" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea></div>
+        </div>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <a id="send-email-button" href="#" class="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-center">Send via Email</a>
+            <div class="flex items-center gap-3">
+                <span class="text-gray-400">or contact me on</span>
+                <a href="https://www.facebook.com/Romer.BNS" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-500 transition-colors duration-300"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
