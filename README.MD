@@ -4,7 +4,7 @@ This repository contains the source code for the personal portfolio of Romer Cas
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://your-live-demo-link-here.com) <!-- Replace with your live demo link -->
 
-![Portfolio Screenshot](./path/to/your/screenshot.png) <!-- Replace with a path to a screenshot of your site -->
+![Portfolio Screenshot](screenshot1.png) <!-- Replace with a path to a screenshot of your site -->
 
 ## ✨ Features
 
