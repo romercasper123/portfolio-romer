@@ -38,3 +38,14 @@ This project was built using a combination of modern web technologies:
 
 The project follows a simple and organized file structure:
 
+
+## 👤 Contact
+
+**Romer Casper Demeterio**
+
+-   **Email**: [romercasper63@gmail.com](mailto:romercasper63@gmail.com)
+-   **Facebook**: [Romer.BNS](https://www.facebook.com/Romer.BNS)
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
