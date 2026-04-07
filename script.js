@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Theme Toggle
+    // 1. Theme Logic
     const html = document.documentElement;
     const themeBtn = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('sun-icon');
@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     updateTheme(savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches));
 
-    // 2. Typing Logic
+    // 2. Typing Animation
     const typedTextElement = document.getElementById('typed-text');
-    const phrases = ["Romer Casper.", "IT Staff @ PRC.", "Full-Stack Dev.", "SQL Expert."];
+    const phrases = ["Romer Casper.", "IT Staff.", "Software Dev.", "SQL Specialist."];
     let pIdx = 0, cIdx = 0, isDeleting = false;
 
     function type() {
@@ -30,21 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
             isDeleting = !isDeleting;
             if (!isDeleting) pIdx = (pIdx + 1) % phrases.length;
         }
-        setTimeout(type, isDeleting ? 50 : 100);
+        setTimeout(type, isDeleting ? 60 : 120);
     }
     type();
 
-    // 3. Carousel
-    const items = document.querySelectorAll('.carousel-item');
-    let cur = 0;
-    setInterval(() => {
-        items[cur].classList.remove('active');
-        cur = (cur + 1) % items.length;
-        items[cur].classList.add('active');
-    }, 4000);
-
-    // 4. FIXED MODAL LOGIC
+    // 3. FIXED MODAL LOGIC
     const modal = document.getElementById('contact-modal');
+    const modalContent = modal.querySelector('div');
     const modalServiceName = document.getElementById('modal-service-name');
     const openBtns = document.querySelectorAll('.inquire-button');
     const closeBtn = document.getElementById('close-modal');
@@ -52,16 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const openModal = (service) => {
         modalServiceName.innerText = service;
-        modal.style.display = 'flex'; // Ensure display is flex
+        // Step 1: Remove 'hidden' and set display
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        
+        // Step 2: Use a small timeout to trigger CSS transition
         setTimeout(() => {
-            modal.classList.add('active-state');
+            modal.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
         }, 10);
     };
 
     const closeModal = () => {
-        modal.classList.remove('active-state');
+        modal.classList.remove('opacity-100');
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-95');
+        
+        // Wait for transition to finish before hiding
         setTimeout(() => {
-            modal.style.display = 'none';
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
         }, 300);
     };
 
@@ -80,8 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.getElementById('modal-name').value;
         const msg = document.getElementById('modal-message').value;
         const service = modalServiceName.innerText;
-        const subject = encodeURIComponent(`Inquiry: ${service}`);
-        const body = encodeURIComponent(`Hi Romer,\n\nI'm ${name}.\n\nProject Details:\n${msg}`);
+
+        const subject = encodeURIComponent(`Project Inquiry: ${service}`);
+        const body = encodeURIComponent(`Hello Romer,\n\nMy name is ${name}.\n\nInquiry Details:\n${msg}`);
+        
         window.location.href = `mailto:romercasper63@gmail.com?subject=${subject}&body=${body}`;
         closeModal();
         inquiryForm.reset();
