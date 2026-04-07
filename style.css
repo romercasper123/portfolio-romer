@@ -1,41 +1,23 @@
-/* Animation & Global UI */
 * {
-    transition-property: background-color, border-color, color, transform, box-shadow, opacity;
-    transition-duration: 350ms;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link {
-    @apply text-slate-500 dark:text-slate-400 hover:text-brand transition-colors relative font-bold uppercase tracking-widest text-[11px];
+    @apply text-slate-400 hover:text-brand transition-colors relative;
 }
 
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #3b82f6;
+.nav-link.active {
+    @apply text-brand;
 }
 
 .typing::after {
-    content: '|';
-    animation: blink 0.7s infinite;
+    content: '_';
+    animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-}
-
-.floating-logo {
-    position: absolute;
-    animation: float 15s infinite ease-in-out alternate;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(0); }
-    100% { transform: translateY(-100px) rotate(20deg); }
 }
 
 .carousel-item {
@@ -49,20 +31,15 @@
     opacity: 1;
 }
 
-/* Button & Input Design */
-.project-button {
-    @apply w-full py-5 rounded-[1.5rem] border-2 border-slate-100 dark:border-slate-800 font-black uppercase text-[10px] tracking-[0.3em] hover:bg-brand hover:border-brand hover:text-white transition-all;
-}
-
 .form-input {
-    @apply w-full px-6 py-4 rounded-3xl bg-slate-50 dark:bg-slate-800 border-none focus:ring-4 ring-brand/10 outline-none transition-all text-slate-900 dark:text-white font-medium;
+    @apply w-full px-5 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-brand focus:ring-2 ring-brand/20 outline-none text-slate-900 dark:text-white;
 }
 
-/* Modal Behavior */
-#contact-modal.is-visible {
-    @apply opacity-100;
+/* Modal States */
+#contact-modal.active-state {
+    opacity: 1;
 }
 
-#contact-modal.is-visible > div {
-    @apply scale-100;
+#contact-modal.active-state > div {
+    transform: scale(1);
 }
