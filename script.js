@@ -18,7 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Typing Animation
     const typedTextElement = document.getElementById('typed-text');
-    const phrases = ["Romer Casper.", "IT Staff.", "Software Dev.", "SQL Specialist."];
+    const phrases = [
+  "Romer Casper.",
+  "IT Staff.",
+  "Software Dev.",
+  "SQL.",
+  "XAMPP.",
+  "WAMP.",
+  "MS Access."
+];
     let pIdx = 0, cIdx = 0, isDeleting = false;
 
     function type() {
