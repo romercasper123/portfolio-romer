@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. Theme Logic ---
+    // 1. Theme Logic
     const html = document.documentElement;
     const themeBtn = document.getElementById('theme-toggle');
     const updateTheme = (isDark) => {
@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     updateTheme(savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches));
 
-    // --- 2. Vibes Typing Logic ---
+    // 2. Typing Animation
     const typedTextElement = document.getElementById('typed-text');
-    const phrases = ["Romer Casper.", "A Vibes Coder.", "Part-Time Dev.", "Freelance Hero."];
+    const phrases = ["Romer Casper.", "Creative Coder.", "Vibes Only.", "Part-Time Dev."];
     let pIdx = 0, cIdx = 0, isDeleting = false;
 
     function type() {
@@ -24,82 +24,81 @@ document.addEventListener('DOMContentLoaded', () => {
             isDeleting = !isDeleting;
             if (!isDeleting) pIdx = (pIdx + 1) % phrases.length;
         }
-        setTimeout(type, isDeleting ? 70 : 150);
+        setTimeout(type, isDeleting ? 70 : 180);
     }
     type();
 
-    // --- 3. Image Carousel ---
+    // 3. Carousel Logic
     const items = document.querySelectorAll('.carousel-item');
     let cur = 0;
     setInterval(() => {
         items[cur].classList.remove('active');
         cur = (cur + 1) % items.length;
         items[cur].classList.add('active');
-    }, 5000);
+    }, 4500);
 
-    // --- 4. FIXED: Modal Inquiry Logic ---
+    // --- 4. RE-ENGINEERED MODAL SYSTEM ---
     const modal = document.getElementById('contact-modal');
     const modalServiceName = document.getElementById('modal-service-name');
-    const openBtns = document.querySelectorAll('.inquire-button');
-    const closeBtn = document.getElementById('close-modal');
+    const inquireButtons = document.querySelectorAll('.inquire-btn');
+    const closeModalBtn = document.getElementById('close-modal');
     const inquiryForm = document.getElementById('inquiry-form');
 
-    // Open Modal
-    openBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+    // Open logic
+    inquireButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
             const service = btn.getAttribute('data-service');
             modalServiceName.innerText = service;
 
-            // Remove hidden and add flex
+            // Remove hidden first, set flex
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
-            // Trigger animation
+
+            // Timeout to allow the browser to register the flex state before starting opacity transition
             setTimeout(() => {
-                modal.classList.add('active-state');
+                modal.classList.add('is-visible');
             }, 10);
         });
     });
 
-    // Close Modal
-    const closeModal = () => {
-        modal.classList.remove('active-state');
+    // Close logic
+    const closeInquiryModal = () => {
+        modal.classList.remove('is-visible');
         setTimeout(() => {
-            modal.classList.remove('flex');
             modal.classList.add('hidden');
-        }, 300);
+            modal.classList.remove('flex');
+        }, 300); // matches the duration-300 in Tailwind
     };
 
-    closeBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    closeModalBtn.addEventListener('click', closeInquiryModal);
+    window.addEventListener('click', (e) => { if (e.target === modal) closeInquiryModal(); });
 
-    // Handle Inquiry Submit (Construct Email)
+    // Handle Email Generation
     inquiryForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('modal-name').value;
-        const msg = document.getElementById('modal-message').value;
-        const service = modalServiceName.innerText;
+        const clientName = document.getElementById('modal-name').value;
+        const clientMsg = document.getElementById('modal-message').value;
+        const projectType = modalServiceName.innerText;
 
-        // Build Email components
-        const subject = encodeURIComponent(`Project Inquiry: ${service}`);
-        const body = encodeURIComponent(`Hello Romer,\n\nMy name is ${name}.\n\nMessage:\n${msg}\n\nCheers!`);
-        
-        // Open Mailto
-        window.location.href = `mailto:romercasper63@gmail.com?subject=${subject}&body=${body}`;
+        const emailSubject = encodeURIComponent(`Inquiry: ${projectType}`);
+        const emailBody = encodeURIComponent(`Hi Romer,\n\nMy name is ${clientName}.\n\nI am interested in the ${projectType}.\n\nMessage:\n${clientMsg}\n\nTalk soon!`);
 
-        closeModal();
+        // Trigger Mail Client
+        window.location.href = `mailto:romercasper63@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+        closeInquiryModal();
         inquiryForm.reset();
     });
 
-    // --- 5. Scroll Spy ---
+    // 5. Scroll Spy Logic
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
-        let curr = '';
-        sections.forEach(s => { if (pageYOffset >= s.offsetTop - 200) curr = s.getAttribute('id'); });
+        let currentSection = '';
+        sections.forEach(s => { if (pageYOffset >= s.offsetTop - 200) currentSection = s.getAttribute('id'); });
         navLinks.forEach(l => {
             l.classList.remove('active');
-            if (l.getAttribute('href').includes(curr)) l.classList.add('active');
+            if (l.getAttribute('href').includes(currentSection)) l.classList.add('active');
         });
     });
 });
