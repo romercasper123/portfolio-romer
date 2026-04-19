@@ -1,4 +1,4 @@
-# 🚀 Vibe Coder Portfolio | Romero Casper (2025 Edition)
+# 🚀 Vibe Coder Portfolio | Romer Casper (2025 Edition)
 
 ![Version](https://img.shields.io/badge/version-2.0.0-accent?style=for-the-badge&labelColor=080c14)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&labelColor=080c14)
