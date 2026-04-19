@@ -1,51 +1,44 @@
-# Personal Portfolio Website
+# 🚀 Vibe Coder Portfolio | Romero Casper (2025 Edition)
 
-This repository contains the source code for the personal portfolio of Romer Casper Demeterio, a full-stack developer. This is a fully responsive, single-page website designed to showcase his skills, services, and projects to potential clients and employers.
+![Version](https://img.shields.io/badge/version-2.0.0-accent?style=for-the-badge&labelColor=080c14)
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&labelColor=080c14)
+![Status](https://img.shields.io/badge/status-Production--Ready-green?style=for-the-badge&labelColor=080c14)
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://your-live-demo-link-here.com) <!-- Replace with your live demo link -->
+A high-performance, aesthetically driven portfolio designed for a **Software Developer & ICT Specialist**. This project blends the "Vibe Coder" aesthetic with enterprise-level professionalism to gain customer trust and showcase technical authority.
 
-![Portfolio Screenshot](screenshot1.png) <!-- Replace with a path to a screenshot of your site -->
+---
 
-## ✨ Features
+## ✨ Key Features
 
--   **Fully Responsive Design**: Adapts seamlessly to all screen sizes, from mobile phones to desktop monitors.
--   **Dark/Light Theme Toggle**: Users can switch between a dark and a light theme, with their preference saved in local storage for future visits.
--   **Interactive UI Elements**:
-    -   **Typing Effect**: An eye-catching typing animation in the hero section.
-    -   **Image Carousel**: An auto-playing carousel in the "About Me" section to display multiple images.
-    -   **Floating Logos**: Animated background with floating programming language logos for a dynamic feel.
-    -   **Hover Effects**: Subtle hover animations on navigation links, cards, and buttons.
--   **Smooth Scrolling**: Clean navigation with smooth scrolling to different sections of the page.
--   **Dynamic Contact Modal**: An "Inquire Now" button on service and project cards opens a pre-filled contact modal, making it easy for users to get in touch. The modal provides options to send a pre-formatted email or contact via Facebook.
--   **Mobile-Friendly Navigation**: A collapsible hamburger menu for easy navigation on smaller devices.
+- 🌓 **Adaptive Dual Mode:** Seamlessly switch between a sleek "Midnight" mode and a clean "Arctic" light mode.
+- 📱 **Mobile-First Responsiveness:** Optimized for all devices using Tailwind CSS fluid design patterns.
+- 🎛️ **Dynamic Experience Slider:** Integrated **Swiper.js** carousel that highlights ICT skills and development tech stacks.
+- 📧 **Smart Gmail Integration:** A custom contact engine that auto-populates Gmail compose windows for instant client interaction.
+- ⚡ **Performance Optimized:** Clean code structure with deferred loading and optimized SVG iconography via Lucide.
 
-## 🛠️ Technologies Used
+---
 
-This project was built using a combination of modern web technologies:
+## 🛠️ Tech Stack
 
--   **Frontend**:
-    -   **HTML5**: For the structure and semantic markup of the website.
-    -   **CSS3**: For custom styling, animations (like the floating logos), and the theme-switching mechanism.
-    -   **JavaScript (Vanilla)**: For all client-side interactivity, including the theme toggle, mobile menu, image carousel, typing effect, and the dynamic contact modal.
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend** | HTML5, Tailwind CSS, JavaScript (ES6+) |
+| **Libraries** | Lucide Icons, Swiper.js (Slider API) |
+| **Back-of-House** | VB.NET Systems, ICT Infrastructure Management |
+| **Design System** | Plus Jakarta Sans Typography, Glassmorphism UI |
 
--   **Styling**:
-    -   **Tailwind CSS**: A utility-first CSS framework for rapidly building the responsive layout and components.
+---
 
--   **Icons**:
-    -   **Devicon**: Used for the programming language and technology logos in the skills section and floating background.
+## 📂 Project Structure
 
-## 📁 Project Structure
-
-The project follows a simple and organized file structure:
-
-
-## 👤 Contact
-
-**Romer Casper Demeterio**
-
--   **Email**: [romercasper63@gmail.com](mailto:romercasper63@gmail.com)
--   **Facebook**: [Romer.BNS](https://www.facebook.com/Romer.BNS)
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+```text
+/portfolio-casper
+├── index.html           # Main architectural structure
+├── README.md            # Technical documentation
+└── assets/
+    ├── css/
+    │   └── style.css    # Custom animations and UI overrides
+    ├── js/
+    │   └── script.js    # Logic for theme, slider, and Gmail API
+    └── img/
+        └── profile.jpg  # Personal branding asset
