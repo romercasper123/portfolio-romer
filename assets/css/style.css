@@ -1,0 +1,51 @@
+/* Scrollbar Styling */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #00f2ff33; border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { background: #00f2ff; }
+
+/* Swiper Pagination Style */
+.swiper-pagination-bullet-active {
+    background: #00f2ff !important;
+}
+
+/* Custom Input Styling */
+.input-field {
+    width: 100%;
+    background: transparent;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.dark .input-field {
+    border-color: #1f2937;
+    background: #0f172a;
+}
+
+.input-field:focus {
+    border-color: #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    height: 70px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.dark #navbar.scrolled {
+    background: rgba(8, 12, 20, 0.85);
+}
+
+/* Base Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
