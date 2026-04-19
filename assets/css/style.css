@@ -1,51 +1,51 @@
-/* Custom Animations */
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-100px); }
-    to { opacity: 1; transform: translateX(0); }
+/* Scrollbar Styling */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #00f2ff33; border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { background: #00f2ff; }
+
+/* Swiper Pagination Style */
+.swiper-pagination-bullet-active {
+    background: #00f2ff !important;
 }
 
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(100px); }
-    to { opacity: 1; transform: translateX(0); }
+/* Custom Input Styling */
+.input-field {
+    width: 100%;
+    background: transparent;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    outline: none;
 }
 
-.animate-slide-in-left { animation: slideInLeft 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-.animate-slide-in-right { animation: slideInRight 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-
-/* Glow Grid Background */
-.glow-grid {
-    background-image: 
-        linear-gradient(to right, rgba(0, 242, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 242, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+.dark .input-field {
+    border-color: #1f2937;
+    background: #0f172a;
 }
 
-/* Scroll reveal classes */
-.reveal-right {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+.input-field:focus {
+    border-color: #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
 }
-
-.reveal-right.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.delay-200 { transition-delay: 0.2s; }
-.delay-400 { transition-delay: 0.4s; }
-
-/* Nav styling */
-.nav-link {
-    position: relative;
-    opacity: 0.7;
-    transition: 0.3s;
-}
-.nav-link:hover { opacity: 1; color: #00f2ff; }
 
 #navbar.scrolled {
-    background: rgba(2, 6, 23, 0.8);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.85);
     height: 70px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.dark #navbar.scrolled {
+    background: rgba(8, 12, 20, 0.85);
+}
+
+/* Base Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
 }
