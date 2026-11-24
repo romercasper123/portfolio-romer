@@ -1,59 +1,8 @@
-// Init Icons
-lucide.createIcons();
-
-// Initialize Experience Slider
-const swiper = new Swiper('.experience-slider', {
-    loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
-
-// Theme Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const html = document.documentElement;
-
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    html.classList.add('dark');
-} else {
-    html.classList.remove('dark');
-}
-
-themeToggle.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
-});
-
-// Navbar Effect
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// GMAIL AUTOMATIC SENDING LOGIC
-document.getElementById('gmailForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const subjectLine = document.getElementById('subject').value;
-    const messageBody = document.getElementById('message').value;
-    const myEmail = "romercasper63@gmail.com";
-
-    // Formating the body for a professional look
-    const fullBody = `Hello Romero Casper,%0D%0A%0D%0AMy name is ${name}.%0D%0A%0D%0A${messageBody}%0D%0A%0D%0ABest regards,%0D%0A${name}`;
-
-    // Gmail Direct Link (Desktop & Mobile Friendly)
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=${encodeURIComponent(subjectLine)}&body=${fullBody}`;
-
-    // Open in new tab
-    window.open(gmailUrl, '_blank');
-});
+'use strict';
+const root=document.documentElement, theme=document.getElementById('theme-toggle');
+function syncTheme(){const dark=root.classList.contains('dark');theme.textContent=dark?'☀':'☾';theme.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
+syncTheme();theme.addEventListener('click',()=>{root.classList.toggle('dark');try{localStorage.theme=root.classList.contains('dark')?'dark':'light'}catch(e){}syncTheme()});
+const menu=document.getElementById('menu-toggle'),links=document.getElementById('navlinks');function closeMenu(){links.classList.remove('open');menu.setAttribute('aria-expanded','false')}menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.querySelectorAll('a').forEach(a=>{const active=a.hash==='#'+e.target.id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}})},{rootMargin:'-20% 0px -55% 0px'});document.querySelectorAll('main section').forEach(s=>observer.observe(s))}
+const slides=[['ICT Infrastructure','Optimizing system performance & network troubleshooting.'],['Software Development','Building VB.NET systems & modern web applications.'],['Automation','Automating administrative workflows with custom scripts.']];let index=0,timer;const pause=document.getElementById('pause-slide');let playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;function render(){document.getElementById('spot-title').textContent=slides[index][0];document.getElementById('spot-text').textContent=slides[index][1];document.getElementById('slide-count').textContent=`0${index+1} / 03`}function step(n){index=(index+n+slides.length)%slides.length;render()}function schedule(){clearInterval(timer);if(playing)timer=setInterval(()=>step(1),6000);pause.textContent=playing?'Ⅱ':'▶';pause.setAttribute('aria-label',playing?'Pause slideshow':'Play slideshow')}document.getElementById('prev-slide').onclick=()=>{step(-1);schedule()};document.getElementById('next-slide').onclick=()=>{step(1);schedule()};pause.onclick=()=>{playing=!playing;schedule()};schedule();
+document.getElementById('gmailForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),subject=document.getElementById('subject').value.trim(),message=document.getElementById('message').value.trim();if(!name||!subject||!message){return}const params=new URLSearchParams({view:'cm',fs:'1',to:'romercasper63@gmail.com',su:subject,body:`Hello Romer Casper,\n\nMy name is ${name}.\n\n${message}\n\nBest regards,\n${name}`});window.open('https://mail.google.com/mail/?'+params.toString(),'_blank','noopener,noreferrer')});document.getElementById('year').textContent=new Date().getFullYear();
